@@ -24,5 +24,5 @@ AOS.init({
   duration: 500,
   easing: 'ease-in-out',
   once: false,
-  offset: 100
+  offset: 100,
 })
