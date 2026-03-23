@@ -178,7 +178,7 @@ const socialMenuLinks = [
             rel="noopener noreferrer"
             class="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0 shadow-none transition-transform duration-200 outline-none hover:scale-105 focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             aria-label="WhatsApp"
-            @click.prevent="openWhatsApp"
+            @click.prevent="openWhatsApp()"
           >
             <span
               class="flex size-8 items-center justify-center overflow-hidden rounded-full bg-white text-slate-900"

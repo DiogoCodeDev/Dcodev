@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import ServiceInquiryForm from '@/components/ServiceInquiryForm.vue'
@@ -11,7 +11,7 @@ const { t, tm } = useI18n()
 /** 55 + DDD 19 + 99839-04078 */
 const WHATSAPP_PHONE = '5519983904078'
 
-/** 'whatsapp' | 'form' — com `?topic=` válido abre direto no formulário (fluxo dos cards) */
+/** 'whatsapp' | 'form' — padrão WhatsApp; `?topic=` só pré-preenche assunto no WA / no formulário se o usuário mudar */
 const contactMode = ref('whatsapp')
 
 const waMessage = ref('')
@@ -41,26 +41,10 @@ function sendWhatsappQuick() {
   window.open(url, '_blank', 'noopener,noreferrer')
 }
 
-/** Quando há topic na URL (ex. vindo de /services), mostrar formulário completo já na carga — evita depender só do clique em produção. */
-function applyContactModeFromTopic() {
-  const raw = route.query.topic
-  const topic = typeof raw === 'string' ? raw : Array.isArray(raw) ? raw[0] : ''
-  if (topic && subjects.value.some(s => s.value === topic)) {
-    contactMode.value = 'form'
-  }
-}
-
-watch(
-  () => [route.query.topic, subjects.value],
-  () => applyContactModeFromTopic(),
-  { immediate: true },
-)
-
 onMounted(() => {
   if (!waMessage.value.trim()) {
     waMessage.value = t('services.selectedWhatsappDefaultMessage')
   }
-  applyContactModeFromTopic()
 })
 
 const radioRingWhatsapp = computed(() =>
@@ -123,10 +107,7 @@ function selectContactMode(mode) {
           :class="contactMode === 'whatsapp' ? 'border-green-600' : ''"
           aria-hidden="true"
         >
-          <span
-            v-show="contactMode === 'whatsapp'"
-            class="h-2.5 w-2.5 rounded-full bg-green-600"
-          />
+          <span v-show="contactMode === 'whatsapp'" class="h-2.5 w-2.5 rounded-full bg-green-600" />
         </span>
       </button>
 
