@@ -1,0 +1,200 @@
+{
+  "site": {
+    "title": "DCODEV — 为企业网站带来高性价比。"
+  },
+  "nav": {
+    "home": "首页",
+    "budget": "报价",
+    "templates": "模板",
+    "services": "服务",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "navMenu": {
+    "offBadge50": "5折",
+    "offBadge30": "7折",
+    "servicesTitle": "服务",
+    "siteType1": "落地页",
+    "siteType2": "企业官网",
+    "siteType3": "维护",
+    "siteType4": "博客 / 内容门户",
+    "siteType5": "SaaS / 控制台",
+    "siteType6": "为您的项目合作",
+    "navigationTitle": "导航",
+    "helpTitle": "帮助",
+    "helpItem1": "常见问题",
+    "helpItem2": "客户专区",
+    "helpItem3": "联系 / WhatsApp",
+    "socialTitle": "社交媒体",
+    "socialInstagram": "Instagram",
+    "socialLinkedin": "领英"
+  },
+  "lang": {
+    "open": "选择语言",
+    "ptBR": "葡萄牙语（巴西）",
+    "enUS": "英语（美国）",
+    "es": "西班牙语",
+    "zhCN": "中文",
+    "frFR": "法语"
+  },
+  "promo": {
+    "text": "免费使用我们的域名与托管 1 年 — 优惠有效期至 {date}。",
+    "textMobile": "免费使用我们的域名与托管 1 年"
+  },
+  "hero": {
+    "title": "WE'RE DCODEV",
+    "subtitleLine1": "连接您的解决方案",
+    "subtitleLine2": "与理想客户的终极桥梁！",
+    "bullet1": "由 AI 优化的智能系统，实现最佳性能。",
+    "bullet2": "沉浸式、功能性应用中的高性价比之选。",
+    "cta": "我要更多互动"
+  },
+  "serviceShowcase": {
+    "tag": "我的服务",
+    "headingLine1": "以视觉重塑体验，",
+    "headingLine2": "提供顶尖 UX/UI 方案",
+    "details": "查看详情",
+    "collapse": "收起",
+    "branding": {
+      "title": "品牌设计",
+      "tag1": "标志",
+      "tag2": "品牌规范",
+      "body": "我们打造独特、难忘的品牌视觉，体现品牌内核。设计有力标志与规范，在各触点保持一致。"
+    },
+    "ux": {
+      "title": "UX 设计",
+      "tag1": "UX",
+      "tag2": "策略",
+      "body": "通过面谈深入理解客户目标与需求，或通过可用性测试验证概念与方案。采用经实践检验的方法，聚焦需要从用户处了解的内容。"
+    },
+    "web": {
+      "title": "网站开发",
+      "tag1": "前端",
+      "tag2": "后端",
+      "body": "我们开发现代、响应式、高性能的网站与应用。采用最佳技术与实践，打造可扩展方案，助力业务增长。"
+    }
+  },
+  "contact": {
+    "quote": "用 AI 打造智能网站，使用您偏好的技术栈",
+    "lead": "服务便捷、沟通高效，价格体系覆盖小微创业者与大型企业。",
+    "yearsExperience": "年经验",
+    "happyClients": "满意客户",
+    "mockupAlt": "网站模型 — 快速交付",
+    "roleProduct": "产品设计师",
+    "roleBranding": "品牌设计师",
+    "roleFullStack": "全栈开发",
+    "services4": "4 项服务",
+    "services20": "+20 项服务",
+    "megaTitle": "超级促销",
+    "megaBody": "与我们成交即享我们域名下的存储与托管，无额外费用。",
+    "phone": "(19) 98390-4078"
+  },
+  "whatsapp": {
+    "prefillNavbar": "您好！想了解更多网站开发服务。",
+    "prefillPromo": "您好！在网站上看到超级促销，想了解更多网站开发服务。",
+    "prefillHelp": "您好，我是从您的网站来的，想聊聊我的项目！"
+  },
+  "mobile": {
+    "social": "联系"
+  },
+  "services": {
+    "title": "服务",
+    "breadcrumbNavLabel": "页面路径",
+    "intro": "提升业务互动与转化的服务与方案。",
+    "highlightsTag": "我的项目",
+    "highlightsTitle": "为每种企业量身打造的",
+    "highlightsSubtitle": "定制解决方案",
+    "highlightCards": [
+      {
+        "title": "落地页",
+        "subtitle": "面向转化，适用于广告、活动与新品发布。"
+      },
+      {
+        "title": "企业官网",
+        "subtitle": "完整展示品牌与业务，多栏目与内容结构。"
+      },
+      {
+        "title": "电商",
+        "subtitle": "在线商店：商品目录、购物车、支付流程，为转化而设计的购物体验。"
+      }
+    ],
+    "maintenanceBannerTitle": "网站与系统维护",
+    "maintenanceBannerBody": "为您的网站与系统提供更新、监控与技术支持，\n兼顾安全与业务目标。",
+    "meiFaq": {
+      "title": "常见问题",
+      "subtitle": "常见问题；若没有您想问的，欢迎通过 WhatsApp 联系我们！",
+      "items": [
+        {
+          "q": "什么是落地页？",
+          "a": "落地页围绕一个明确目标：留资、下单或注册。很适合广告投放、社交媒体与短期活动，不必一开始就做成完整多页网站。"
+        },
+        {
+          "q": "绿色横幅上的优惠指什么？",
+          "a": "表示在双方约定的商业条件下，可免费使用我们的域名并包含托管，为期一年。具体范围（是否使用自有域名、续费方式等）以报价与合同为准。"
+        },
+        {
+          "q": "可以使用我自己的域名吗？",
+          "a": "可以。多数项目可将站点绑定您已有或新注册的域名。横幅描述的是含我方域名的套餐；若您更倾向自有域名，我们会在方案中说明流程与费用。"
+        },
+        {
+          "q": "是否必须有营业执照或公司主体？",
+          "a": "您可以先咨询与评估需求。开具发票与签署正式合同时，再按实际情况约定主体类型（企业、个体或个人）。"
+        },
+        {
+          "q": "页面上线大概要多久？",
+          "a": "取决于范围：简洁落地页与含集成（表单、支付、CRM等）、文案与修改轮次不同。我们会在方案中给出合理周期；若有活动或上线日期请提前说明以便排期。"
+        },
+        {
+          "q": "落地页会在 Google 上被搜到吗？",
+          "a": "我们会提供利于收录的技术基础与基础站内 SEO。自然排名需要时间且受竞争影响。若希望更快见效，落地页配合付费推广（Google、Meta 等）。"
+        },
+        {
+          "q": "一年之后托管与域名怎么办？",
+          "a": "到期后按当时约定的方案与价格续费。我们会提前提醒，避免服务中断；若需迁移到其他服务商，也可协助交接。"
+        }
+      ]
+    },
+    "inquiryForm": {
+      "title": "预约联系",
+      "description": "请填写下方信息。提交后我们将在 24 小时内与您联系！",
+      "nameLabel": "姓名",
+      "namePlaceholder": "如何称呼您？",
+      "emailLabel": "电子邮箱",
+      "emailPlaceholder": "you{'@'}email.com",
+      "subjectLabel": "主题 / 服务类型",
+      "subjectPlaceholder": "请选择主题",
+      "messageLabel": "需求说明",
+      "messagePlaceholder": "目标、时间、现有网站链接或其他有助于我们了解需求的信息。",
+      "submit": "发送",
+      "sending": "发送中…",
+      "successTitle": "发送成功！",
+      "successBody": "我们已收到您的邮件，将尽快回复。",
+      "successButton": "关闭",
+      "submitError": "暂时无法发送，请稍后重试或通过 WhatsApp 联系我们。",
+      "whatsappIntro": "您好！我从「服务 / 维护」页面前来，想咨询：",
+      "subjects": [
+        { "value": "landing", "label": "落地页" },
+        { "value": "institutional", "label": "企业官网" },
+        { "value": "ecommerce", "label": "电商" },
+        { "value": "maintenance", "label": "维护或技术支持" },
+        { "value": "blog", "label": "博客 / 内容门户" },
+        { "value": "saas", "label": "SaaS / 后台 / 系统" },
+        { "value": "custom", "label": "定制服务" },
+        { "value": "other", "label": "其他" }
+      ]
+    },
+    "selectedTitle": "联系",
+    "selectedIntro": "请根据上一页选择的服务类型填写表单。",
+    "selectedIntroHighlight": "我们为企业各类业务需求提供 Web 应用与移动应用开发服务。",
+    "selectedBreadcrumb": "联系",
+    "selectedContactPrompt": "选择联系方式",
+    "selectedContactFormOption": "完整表单",
+    "selectedContactFormHint": "姓名、邮箱、主题与详细留言。",
+    "selectedWhatsappMessageLabel": "留言内容",
+    "selectedWhatsappMessagePlaceholder": "请说明您的需求，我们将用此内容打开 WhatsApp。",
+    "selectedWhatsappSend": "发送",
+    "selectedWhatsappDefaultMessage": "您好！我对你们的服务很感兴趣！",
+    "selectedWhatsappBadgeTitle": "WhatsApp",
+    "selectedWhatsappBadgeLine": "30 分钟内回复"
+  }
+}

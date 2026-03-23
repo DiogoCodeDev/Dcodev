@@ -10,7 +10,7 @@ export const useTemplateStore = defineStore('template', {
     async getMainTemplate() {
       await mainService
         // .get(`${configUrl}/sys/${sysId}/${ownerId}/template.json`)
-        .get('../../template.json')
+        .get('/template.json')
         .then(resp => {
           this.mainTemplate = resp
         })

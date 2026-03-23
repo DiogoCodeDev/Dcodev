@@ -1,30 +1,80 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import PromoRibbon from '@/components/PromoRibbon.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+
+const { t } = useI18n()
+const route = useRoute()
+const router = useRouter()
+
+function goToServicesMenu() {
+  router.push('/services')
+  closeNavMenu()
+}
+
+const normalizedPath = computed(() => {
+  const path = (route.path || '/').replace(/\/+$/, '') || '/'
+  return path || '/'
+})
+
+const isHomeRoute = computed(() => normalizedPath.value === '/')
+
+/** Serviços + fluxo de orçamento selecionado */
+const isServicesRoute = computed(() => {
+  const p = normalizedPath.value
+  return p === '/services' || p === '/selected' || p === '/services/selected'
+})
+
+function navLinkIsActive(item) {
+  if (item.href === '#') return false
+  if (item.isBudget) return false
+  if (item.isHome) return isHomeRoute.value
+  if (item.href === '/services') return isServicesRoute.value
+  return false
+}
+
+function navLinkClass(item) {
+  return navLinkIsActive(item)
+    ? 'border-b-2 border-green-400 pb-0.5 font-medium text-white hover:text-white'
+    : 'text-gray-400 hover:text-white'
+}
 
 const isScrolled = ref(false)
-const isMobileMenuOpen = ref(false)
+const isPromoVisible = ref(true)
+const isNavMenuOpen = ref(false)
+
+/** Colapsa a faixa no layout ao rolar (evita translate no header inteiro — isso deixava buraco no menu mobile full-screen). */
+const promoSlotClass = computed(() =>
+  isPromoVisible.value ? 'max-h-[5.5rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0',
+)
+
+/** Esconde a faixa promocional ao rolar um pouco; volta no topo da página. */
+const PROMO_HIDE_AFTER_PX = 32
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 0
+  const y = window.scrollY
+  isScrolled.value = y > 0
+  isPromoVisible.value = y < PROMO_HIDE_AFTER_PX
 }
 
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
+const toggleNavMenu = () => {
+  isNavMenuOpen.value = !isNavMenuOpen.value
 }
 
-// Mantém o breakpoint alinhado com o Tailwind (lg = 1024px)
-let mediaLg
-const handleResizeMatch = () => {
-  if (mediaLg?.matches) {
-    isMobileMenuOpen.value = false
-  }
+const closeNavMenu = () => {
+  isNavMenuOpen.value = false
 }
 
-const openWhatsApp = () => {
+const openHelpWhatsAppAndCloseMenu = () => {
+  openWhatsApp('whatsapp.prefillHelp')
+  closeNavMenu()
+}
+
+const openWhatsApp = (prefillKey = 'whatsapp.prefillNavbar') => {
   const phone = '5519983904078'
-  const message = encodeURIComponent(
-    'Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web.',
-  )
+  const message = encodeURIComponent(t(prefillKey))
 
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent,
@@ -38,210 +88,245 @@ const openWhatsApp = () => {
 }
 
 onMounted(() => {
-  // scroll
   handleScroll()
   window.addEventListener('scroll', handleScroll)
-
-  // resize com matchMedia no mesmo breakpoint do Tailwind (lg)
-  mediaLg = window.matchMedia('(min-width: 1024px)')
-  handleResizeMatch()
-  mediaLg.addEventListener('change', handleResizeMatch)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-  mediaLg?.removeEventListener('change', handleResizeMatch)
 })
+
+const navLinks = [
+  { key: 'nav.home', href: '/', isHome: true },
+  { key: 'nav.budget', href: '/services', isBudget: true },
+  { key: 'nav.services', href: '/services' },
+]
+
+const siteTypeIndexes = [1, 2, 6, 4, 5, 3]
+
+const helpMenuLinks = [
+  { key: 'navMenu.helpItem1', to: { name: 'services', hash: '#faq' } },
+  { key: 'navMenu.helpItem2', to: { name: 'services' } },
+  { key: 'navMenu.helpItem3', whatsapp: true },
+]
+
+/** Substitua pelos perfis reais da marca. */
+const socialMenuLinks = [
+  { id: 'ig', key: 'navMenu.socialInstagram', href: 'https://www.instagram.com/diogo.code/' },
+  { id: 'in', key: 'navMenu.socialLinkedin', href: 'https://www.linkedin.com/in/allan-code/' },
+]
 </script>
 
 <template>
-  <nav
-    class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-gray-900/95 backdrop-blur-md transition-all duration-300"
-    :class="{ 'bg-gray-900/95 shadow-2xl': isScrolled }"
+  <div
+    class="fixed inset-x-0 top-0 z-50 flex flex-col"
+    :class="{ 'max-lg:bottom-0 max-lg:overflow-hidden': isNavMenuOpen }"
   >
-    <!-- Container em GRID: 3 colunas -->
-    <div class="mx-auto grid h-16 max-w-6xl grid-cols-3 items-center px-4 lg:px-8">
-      <!-- Coluna 1: Hamburguer (mobile) + Links (desktop) -->
-      <div class="col-start-1 col-end-2 flex items-center">
-        <!-- Hamburguer (só mobile) -->
-        <button
-          @click="toggleMobileMenu"
-          class="flex h-8 w-8 flex-col items-center justify-center lg:hidden"
-          :aria-expanded="isMobileMenuOpen"
-          aria-controls="mobile-menu"
-        >
-          <span class="h-0.5 w-6 bg-white"></span>
-          <span class="mt-1.5 h-0.5 w-6 bg-white"></span>
-          <span class="mt-1.5 h-0.5 w-6 bg-white"></span>
-        </button>
-
-        <!-- Links Desktop -->
-        <div class="hidden gap-8 lg:flex">
-          <a
-            href="#"
-            class="relative text-sm font-medium text-white transition-all duration-300 hover:text-green-400"
-          >
-            Home
-            <div class="absolute inset-x-0 -bottom-2 h-0.5 bg-green-400"></div>
-          </a>
-          <a
-            href="#"
-            class="text-sm font-medium text-white transition-all duration-300 hover:text-green-400"
-          >
-            Orçamento
-          </a>
-          <a
-            href="#"
-            class="text-sm font-medium text-white transition-all duration-300 hover:text-green-400"
-          >
-            Templates
-          </a>
-          <a
-            href="#"
-            class="text-sm font-medium text-white transition-all duration-300 hover:text-green-400"
-          >
-            Serviços
-          </a>
-        </div>
-      </div>
-
-      <!-- Coluna 2: Logo SEM absolute (sempre centralizado) -->
-      <div class="col-start-2 col-end-3 flex items-center justify-center">
-        <img src="../assets/branding/dcodev.webp" alt="Decodev Logo" class="h-5 w-auto md:h-6" />
-      </div>
-
-      <!-- Coluna 3: Ícones sociais (apenas desktop) -->
-      <div class="col-start-3 col-end-4 hidden items-center justify-end gap-3 lg:flex">
-        <a
-          href="https://api.whatsapp.com/send?phone=5519983904078&text=Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web."
-          target="_blank"
-          rel="noopener noreferrer"
-          @click.prevent="openWhatsApp"
-          class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:text-gray-900"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://api.whatsapp.com/send?phone=5519983904078&text=Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web."
-          target="_blank"
-          rel="noopener noreferrer"
-          @click.prevent="openWhatsApp"
-          class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:text-gray-900"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://api.whatsapp.com/send?phone=5519983904078&text=Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web."
-          target="_blank"
-          rel="noopener noreferrer"
-          @click.prevent="openWhatsApp"
-          class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500 hover:text-gray-900"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Mobile Menu Overlay -->
     <div
-      v-if="isMobileMenuOpen"
-      id="mobile-menu"
-      class="absolute top-full right-0 left-0 border-b border-white/10 bg-gray-900 backdrop-blur-md lg:hidden"
+      class="relative z-[3] shrink-0 overflow-hidden transition-[max-height,opacity] duration-300 ease-out will-change-[max-height,opacity]"
+      :class="promoSlotClass"
     >
-      <div class="space-y-6 px-4 py-6">
-        <a
-          href="#"
-          class="block border-b border-gray-700 py-4 text-lg font-medium text-white transition-colors hover:text-green-400"
-        >
-          Home
-        </a>
-        <a
-          href="#"
-          class="block border-b border-gray-700 py-4 text-lg font-medium text-white transition-colors hover:text-green-400"
-        >
-          Orçamento
-        </a>
-        <a
-          href="#"
-          class="block border-b border-gray-700 py-4 text-lg font-medium text-white transition-colors hover:text-green-400"
-        >
-          Templates
-        </a>
-        <a
-          href="#"
-          class="block border-b border-gray-700 py-4 text-lg font-medium text-white transition-colors hover:text-green-400"
-        >
-          Serviços
-        </a>
+      <PromoRibbon />
+    </div>
+    <nav
+      class="relative z-[2] border-b border-white/10 bg-gray-900/95 backdrop-blur-md transition-all duration-300"
+      :class="{ 'shadow-2xl': isScrolled }"
+    >
+      <div class="mx-auto grid h-16 max-w-6xl grid-cols-3 items-center px-3 lg:px-5">
+        <div class="col-start-1 col-end-2 flex items-center">
+          <button
+            type="button"
+            class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-white/5"
+            :aria-expanded="isNavMenuOpen"
+            aria-controls="nav-full-menu"
+            :aria-label="isNavMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')"
+            @click="toggleNavMenu"
+          >
+            <span
+              v-if="!isNavMenuOpen"
+              class="flex flex-col items-center justify-center gap-1.5"
+              aria-hidden="true"
+            >
+              <span class="block h-0.5 w-6 rounded-full bg-white" />
+              <span class="block h-0.5 w-6 rounded-full bg-white" />
+              <span class="block h-0.5 w-6 rounded-full bg-white" />
+            </span>
+            <svg
+              v-else
+              class="h-6 w-6 shrink-0 text-white"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
 
-        <!-- Social Mobile -->
-        <div class="border-t border-gray-700 pt-4">
-          <p class="mb-3 text-sm text-gray-400">Redes Sociais</p>
-          <div class="flex gap-5">
-            <a
-              href="https://api.whatsapp.com/send?phone=5519983904078&text=Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web."
-              target="_blank"
-              rel="noopener noreferrer"
-              @click.prevent="openWhatsApp"
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white transition-all duration-300 hover:bg-green-500 hover:text-gray-900"
+        <div class="col-start-2 col-end-3 flex items-center justify-center">
+          <img src="../assets/branding/dcodev.webp" alt="Decodev Logo" class="h-5 w-auto md:h-6" />
+        </div>
+
+        <div class="col-start-3 col-end-4 flex items-center justify-end gap-3">
+          <a
+            href="https://api.whatsapp.com/send?phone=5519983904078"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0 shadow-none transition-transform duration-200 outline-none hover:scale-105 focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+            aria-label="WhatsApp"
+            @click.prevent="openWhatsApp"
+          >
+            <span
+              class="flex size-8 items-center justify-center overflow-hidden rounded-full bg-white text-slate-900"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                 />
               </svg>
-            </a>
-            <a
-              href="https://api.whatsapp.com/send?phone=5519983904078&text=Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web."
-              target="_blank"
-              rel="noopener noreferrer"
-              @click.prevent="openWhatsApp"
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white transition-all duration-300 hover:bg-green-500 hover:text-gray-900"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://api.whatsapp.com/send?phone=5519983904078&text=Olá! Gostaria de saber mais sobre os serviços de desenvolvimento web."
-              target="_blank"
-              rel="noopener noreferrer"
-              @click.prevent="openWhatsApp"
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white transition-all duration-300 hover:bg-green-500 hover:text-gray-900"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"
-                />
-              </svg>
-            </a>
-          </div>
+            </span>
+          </a>
+          <LanguageSwitcher />
         </div>
       </div>
-    </div>
-  </nav>
-</template>
+    </nav>
 
-<style>
-/* Global (sem scoped) para evitar overflow horizontal no mobile */
-@media (max-width: 768px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-}
-</style>
+    <Transition
+      enter-active-class="transition-transform duration-300 ease-out"
+      leave-active-class="transition-transform duration-300 ease-in"
+      enter-from-class="-translate-y-full"
+      leave-to-class="-translate-y-full"
+      enter-to-class="translate-y-0"
+      leave-from-class="translate-y-0"
+    >
+      <div
+        v-if="isNavMenuOpen"
+        id="nav-full-menu"
+        class="relative z-0 min-h-0 w-full flex-1 overflow-y-auto overscroll-y-contain border-b border-white/10 bg-gray-900/95 shadow-lg backdrop-blur-md [-webkit-overflow-scrolling:touch] lg:max-h-[min(70vh,calc(100dvh-5rem))] lg:flex-none lg:shrink-0"
+      >
+        <div class="w-full px-3 py-8 lg:px-5 lg:py-12">
+          <nav
+            class="mx-auto grid max-w-6xl grid-cols-1 gap-8 pb-8 text-[calc(0.875rem*1.15)] lg:grid-cols-4 lg:items-start lg:gap-6 lg:pb-10"
+            aria-label="Menu principal"
+          >
+            <div class="text-left lg:min-w-0">
+              <h3 class="mb-3 font-semibold tracking-wide text-green-400 uppercase">
+                {{ t('navMenu.navigationTitle') }}
+              </h3>
+              <ul class="space-y-2.5 text-gray-400" role="list">
+                <li v-for="item in navLinks" :key="item.key">
+                  <RouterLink
+                    v-if="item.href !== '#'"
+                    :to="item.href"
+                    class="inline-block cursor-pointer transition-colors"
+                    :class="navLinkClass(item)"
+                    :aria-current="navLinkIsActive(item) ? 'page' : undefined"
+                    @click="closeNavMenu"
+                  >
+                    {{ t(item.key) }}
+                  </RouterLink>
+                  <a
+                    v-else
+                    href="#"
+                    class="inline-block cursor-pointer text-gray-400 transition-colors hover:text-white"
+                    @click.prevent="closeNavMenu"
+                  >
+                    {{ t(item.key) }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 lg:min-w-0"
+              role="link"
+              tabindex="0"
+              :aria-label="t('nav.services')"
+              @click="goToServicesMenu"
+              @keydown.enter.prevent="goToServicesMenu"
+              @keydown.space.prevent="goToServicesMenu"
+            >
+              <h3 class="mb-3 font-semibold tracking-wide text-green-400 uppercase">
+                {{ t('navMenu.servicesTitle') }}
+              </h3>
+              <ul class="space-y-2.5 text-gray-400" role="list">
+                <li
+                  v-for="i in siteTypeIndexes"
+                  :key="'st-' + i"
+                  class="group flex cursor-pointer flex-row flex-nowrap items-center gap-2"
+                >
+                  <span class="min-w-0 transition-colors group-hover:text-white">{{
+                    t(`navMenu.siteType${i}`)
+                  }}</span>
+                  <span
+                    v-if="i === 1 || i === 2"
+                    class="inline-flex shrink-0 items-center rounded-full bg-green-400 px-2 py-0.5 text-[0.7em] leading-none font-bold tracking-wide text-gray-900 uppercase"
+                    aria-hidden="true"
+                  >
+                    {{ t(i === 1 ? 'navMenu.offBadge50' : 'navMenu.offBadge30') }}
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left lg:min-w-0">
+              <h3 class="mb-3 font-semibold tracking-wide text-green-400 uppercase">
+                {{ t('navMenu.helpTitle') }}
+              </h3>
+              <ul class="space-y-2.5 text-gray-400" role="list">
+                <li v-for="item in helpMenuLinks" :key="item.key">
+                  <RouterLink
+                    v-if="item.to"
+                    :to="item.to"
+                    class="inline-block cursor-pointer text-gray-400 transition-colors hover:text-white"
+                    @click="closeNavMenu"
+                  >
+                    {{ t(item.key) }}
+                  </RouterLink>
+                  <a
+                    v-else-if="!item.whatsapp"
+                    :href="item.href"
+                    class="inline-block cursor-pointer text-gray-400 transition-colors hover:text-white"
+                    @click="closeNavMenu"
+                  >
+                    {{ t(item.key) }}
+                  </a>
+                  <a
+                    v-else
+                    href="https://api.whatsapp.com/send?phone=5519983904078"
+                    class="inline-block cursor-pointer text-gray-400 transition-colors hover:text-white"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    @click.prevent="openHelpWhatsAppAndCloseMenu"
+                  >
+                    {{ t(item.key) }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="text-left lg:min-w-0">
+              <h3 class="mb-3 font-semibold tracking-wide text-green-400 uppercase">
+                {{ t('navMenu.socialTitle') }}
+              </h3>
+              <ul class="space-y-2.5 text-gray-400" role="list">
+                <li v-for="item in socialMenuLinks" :key="item.id">
+                  <a
+                    :href="item.href"
+                    class="inline-block cursor-pointer text-gray-400 transition-colors hover:text-white"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    @click="closeNavMenu"
+                  >
+                    {{ t(item.key) }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </Transition>
+  </div>
+</template>

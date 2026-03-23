@@ -1,0 +1,200 @@
+{
+  "site": {
+    "title": "DCODEV — Excelente relación calidad-precio para el sitio de tu negocio."
+  },
+  "nav": {
+    "home": "Inicio",
+    "budget": "Presupuesto",
+    "templates": "Plantillas",
+    "services": "Servicios",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "navMenu": {
+    "offBadge50": "50% DTO",
+    "offBadge30": "30% DTO",
+    "servicesTitle": "Servicios",
+    "siteType1": "Landing page",
+    "siteType2": "Sitio institucional",
+    "siteType3": "Mantenimiento",
+    "siteType4": "Blog / portal de contenido",
+    "siteType5": "SaaS / panel",
+    "siteType6": "Contrata para tu proyecto",
+    "navigationTitle": "Navegación",
+    "helpTitle": "Ayuda",
+    "helpItem1": "FAQ (Dudas)",
+    "helpItem2": "Área del cliente",
+    "helpItem3": "Contacto / WhatsApp",
+    "socialTitle": "Redes sociales",
+    "socialInstagram": "Instagram",
+    "socialLinkedin": "LinkedIn"
+  },
+  "lang": {
+    "open": "Elegir idioma",
+    "ptBR": "Portugués (Brasil)",
+    "enUS": "Inglés (EE. UU.)",
+    "es": "Español",
+    "zhCN": "Chino",
+    "frFR": "Francés"
+  },
+  "promo": {
+    "text": "Alojamiento y uso de nuestro dominio gratis por 1 año — promoción válida hasta {date}.",
+    "textMobile": "Alojamiento y uso de nuestro dominio gratis por 1 año"
+  },
+  "hero": {
+    "title": "WE'RE DCODEV",
+    "subtitleLine1": "¡El puente definitivo entre tu solución",
+    "subtitleLine2": "y tu cliente!",
+    "bullet1": "Sistemas inteligentes optimizados con IA para el máximo rendimiento.",
+    "bullet2": "Mejor relación calidad-precio en aplicaciones inmersivas y funcionales.",
+    "cta": "QUIERO MÁS ENGAGEMENT"
+  },
+  "serviceShowcase": {
+    "tag": "Mis Servicios",
+    "headingLine1": "Transformando lo Visual Con",
+    "headingLine2": "Soluciones UX/UI de Vanguardia",
+    "details": "Ver detalles",
+    "collapse": "Ocultar",
+    "branding": {
+      "title": "Branding",
+      "tag1": "Logo",
+      "tag2": "Guía de marca",
+      "body": "Desarrollamos identidades visuales únicas y memorables que reflejan la esencia de tu marca. Creamos logos impactantes y guías que aseguran consistencia en cada punto de contacto."
+    },
+    "ux": {
+      "title": "UX Design",
+      "tag1": "UX",
+      "tag2": "Estrategia",
+      "body": "Comprende mejor los objetivos y necesidades del cliente con entrevistas presenciales, o valida conceptos y soluciones con pruebas de usabilidad. Uso métodos probados adaptados a lo que necesitamos aprender."
+    },
+    "web": {
+      "title": "Desarrollo Web",
+      "tag1": "Frontend",
+      "tag2": "Backend",
+      "body": "Desarrollamos sitios y aplicaciones web modernas, responsivas y de alto rendimiento. Usamos las mejores tecnologías para soluciones escalables que impulsan tu negocio."
+    }
+  },
+  "contact": {
+    "quote": "Sitios inteligentes creados con IA en la tecnología que prefieras",
+    "lead": "Servicio con fácil acceso y contacto ágil, con precios pensados para emprendedores y grandes empresas.",
+    "yearsExperience": "Años de Experiencia",
+    "happyClients": "Clientes Satisfechos",
+    "mockupAlt": "Modelo de sitio — entrega rápida",
+    "roleProduct": "Product Designer",
+    "roleBranding": "Branding Designer",
+    "roleFullStack": "Full Stack Developer",
+    "services4": "4 servicios",
+    "services20": "+20 servicios",
+    "megaTitle": "Mega Promoción",
+    "megaBody": "Al cerrar negocio con nosotros, garantizas almacenamiento y alojamiento en nuestro dominio sin coste adicional.",
+    "phone": "(19) 98390-4078"
+  },
+  "whatsapp": {
+    "prefillNavbar": "¡Hola! Me gustaría saber más sobre los servicios de desarrollo web.",
+    "prefillPromo": "¡Hola! Vi la mega promoción en el sitio y me gustaría saber más sobre los servicios de desarrollo web.",
+    "prefillHelp": "¡Hola, vengo de tu sitio y me gustaría hablar sobre mi proyecto!"
+  },
+  "mobile": {
+    "social": "Contacto"
+  },
+  "services": {
+    "title": "Servicios",
+    "breadcrumbNavLabel": "Ruta en el sitio",
+    "intro": "Servicios y soluciones que aumentan el engagement de tu negocio.",
+    "highlightsTag": "Mis Proyectos",
+    "highlightsTitle": "Soluciones a Medida Para",
+    "highlightsSubtitle": "Cada Tipo de Negocio",
+    "highlightCards": [
+      {
+        "title": "Landing page",
+        "subtitle": "Páginas orientadas a la conversión para campañas y lanzamientos."
+      },
+      {
+        "title": "Sitio institucional",
+        "subtitle": "Presencia completa de tu marca en la web, con secciones y contenido."
+      },
+      {
+        "title": "E-commerce",
+        "subtitle": "Tienda online con catálogo, carrito, pagos y una experiencia pensada para vender más."
+      }
+    ],
+    "maintenanceBannerTitle": "Mantenimiento para tu sitio",
+    "maintenanceBannerBody": "Actualización, supervisión y soporte para tu web y tus sistemas,\ncon seguridad y foco en tus objetivos.",
+    "meiFaq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "Preguntas frecuentes: si no encuentras la tuya, escríbenos por WhatsApp.",
+      "items": [
+        {
+          "q": "¿Qué es una landing page?",
+          "a": "Es una página con un objetivo claro: captar contactos, vender o registrar usuarios. Encaja bien con anuncios, Instagram y campañas puntuales, sin necesidad de un sitio completo desde el primer día."
+        },
+        {
+          "q": "¿Qué significa la promoción de la franja verde?",
+          "a": "Indica alojamiento y uso de nuestro dominio sin coste adicional durante 1 año según las condiciones comerciales acordadas. Los detalles (alcance, dominio propio frente al dominio de la oferta, renovación) se confirman en el presupuesto y el contrato."
+        },
+        {
+          "q": "¿Puedo usar mi propio dominio (.com, .com.ar, etc.)?",
+          "a": "Sí; en la mayoría de proyectos el sitio puede apuntar a un dominio que ya tengas o que registremos. La franja verde describe el paquete con nuestro dominio; si prefieres el tuyo, lo alineamos en la propuesta."
+        },
+        {
+          "q": "¿Necesito ser autónomo o tener empresa para contratar?",
+          "a": "Puedes pedir presupuesto y definir el proyecto sin trámites extra. Para factura y contrato formal acordamos si será como autónomo, empresa o persona física, según encaje con tu caso."
+        },
+        {
+          "q": "¿Cuánto tarda en estar online la página?",
+          "a": "Depende del alcance: landing sencilla frente a integraciones (formularios, pagos, CRM), textos y rondas de revisión. En la propuesta damos un plazo realista; si tienes fecha de campaña o lanzamiento, dímelo para priorizar."
+        },
+        {
+          "q": "¿La landing aparece en Google?",
+          "a": "Entregamos una base técnica adecuada para indexación y buenas prácticas SEO on-page. El posicionamiento orgánico lleva tiempo y depende de la competencia. Para resultados más rápidos, landing + anuncios (Google, Meta, etc.)."
+        },
+        {
+          "q": "¿Qué pasa tras el primer año con alojamiento y dominio?",
+          "a": "Pasarán a renovarse según el plan y precios que acordemos. Avisaremos con antelación para evitar cortes; si quieres migrar a otro proveedor, podemos orientarte."
+        }
+      ]
+    },
+    "inquiryForm": {
+      "title": "Solicita un contacto",
+      "description": "Completa los datos. Al enviar, te contactaremos en un plazo de hasta 24 horas.",
+      "nameLabel": "Nombre",
+      "namePlaceholder": "¿Cómo te llamamos?",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu{'@'}email.com",
+      "subjectLabel": "Motivo / tipo de servicio",
+      "subjectPlaceholder": "Elige un tema",
+      "messageLabel": "Cuéntanos qué necesitas",
+      "messagePlaceholder": "Objetivos, plazo, enlace del sitio actual u otros datos útiles.",
+      "submit": "Enviar",
+      "sending": "Enviando…",
+      "successTitle": "¡Mensaje enviado!",
+      "successBody": "Recibimos tu mensaje en nuestro correo y te responderemos pronto.",
+      "successButton": "Cerrar",
+      "submitError": "No pudimos enviar ahora. Inténtalo de nuevo en un momento o escríbenos por WhatsApp.",
+      "whatsappIntro": "¡Hola! Vengo de la página de Servicios / Mantenimiento y quiero hablar sobre:",
+      "subjects": [
+        { "value": "landing", "label": "Landing page" },
+        { "value": "institutional", "label": "Sitio institucional" },
+        { "value": "ecommerce", "label": "E-commerce" },
+        { "value": "maintenance", "label": "Mantenimiento o soporte" },
+        { "value": "blog", "label": "Blog / portal de contenido" },
+        { "value": "saas", "label": "SaaS / panel / sistema" },
+        { "value": "custom", "label": "Servicio a medida" },
+        { "value": "other", "label": "Otro tema" }
+      ]
+    },
+    "selectedTitle": "Contacto",
+    "selectedIntro": "Completa el formulario según el tipo de servicio que elegiste en la página anterior.",
+    "selectedIntroHighlight": "Desarrollamos aplicaciones web y móviles para distintas necesidades empresariales.",
+    "selectedBreadcrumb": "Contacto",
+    "selectedContactPrompt": "Elige cómo contactarnos",
+    "selectedContactFormOption": "Formulario completo",
+    "selectedContactFormHint": "Nombre, correo, tema y mensaje detallada.",
+    "selectedWhatsappMessageLabel": "Tu mensaje",
+    "selectedWhatsappMessagePlaceholder": "Escribe lo que necesitas. Abriremos WhatsApp con este texto.",
+    "selectedWhatsappSend": "Enviar",
+    "selectedWhatsappDefaultMessage": "¡Hola! Tengo interés en alguno de sus servicios!",
+    "selectedWhatsappBadgeTitle": "WhatsApp",
+    "selectedWhatsappBadgeLine": "Respuesta en hasta 30 minutos"
+  }
+}

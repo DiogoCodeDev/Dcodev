@@ -1,1 +1,224 @@
-{}
+{
+  "site": {
+    "title": "DCODEV — Great value for your business website."
+  },
+  "nav": {
+    "home": "Home",
+    "budget": "Quote",
+    "templates": "Templates",
+    "services": "Services",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "navMenu": {
+    "offBadge50": "50% OFF",
+    "offBadge30": "30% OFF",
+    "servicesTitle": "Services",
+    "siteType1": "Landing page",
+    "siteType2": "Corporate website",
+    "siteType3": "Maintenance",
+    "siteType4": "Blog / content portal",
+    "siteType5": "SaaS / dashboard",
+    "siteType6": "Hire us for your project",
+    "navigationTitle": "Navigation",
+    "helpTitle": "Help",
+    "helpItem1": "FAQ",
+    "helpItem2": "Client area",
+    "helpItem3": "Contact / WhatsApp",
+    "socialTitle": "Social",
+    "socialInstagram": "Instagram",
+    "socialLinkedin": "LinkedIn"
+  },
+  "lang": {
+    "open": "Choose language",
+    "ptBR": "Portuguese (Brazil)",
+    "enUS": "English (USA)",
+    "es": "Spanish",
+    "zhCN": "Chinese",
+    "frFR": "French"
+  },
+  "promo": {
+    "text": "Hosting and use of our domain free for 1 year — offer valid until {date}.",
+    "textMobile": "Hosting and use of our domain free for 1 year"
+  },
+  "hero": {
+    "title": "WE'RE DCODEV",
+    "subtitleLine1": "The definitive bridge between your solution",
+    "subtitleLine2": "and your client!",
+    "bullet1": "AI-optimized intelligent systems for maximum performance.",
+    "bullet2": "Best cost-benefit in immersive, functional applications.",
+    "cta": "I WANT MORE ENGAGEMENT"
+  },
+  "serviceShowcase": {
+    "tag": "My Services",
+    "headingLine1": "Transforming Visuals With",
+    "headingLine2": "Cutting-Edge UX/UI Solutions",
+    "details": "View details",
+    "collapse": "Collapse",
+    "branding": {
+      "title": "Branding",
+      "tag1": "Logo",
+      "tag2": "Brand Guideline",
+      "body": "We develop unique, memorable visual identities that reflect your brand essence. We create impactful logos and brand guidelines that ensure consistency at every touchpoint."
+    },
+    "ux": {
+      "title": "UX Design",
+      "tag1": "UX",
+      "tag2": "Strategy",
+      "body": "Gain a deeper understanding of client goals and needs through in-person interviews, or validate concepts and solutions with usability tests. I use proven methods tailored to what we need to learn from users."
+    },
+    "web": {
+      "title": "Web Development",
+      "tag1": "Frontend",
+      "tag2": "Backend",
+      "body": "We build modern, responsive, high-performance websites and web apps. We use the best technologies and practices to create scalable solutions that drive your business growth."
+    }
+  },
+  "contact": {
+    "quote": "Smart sites built with AI in the tech stack you prefer",
+    "lead": "A service with easy access and agile contact options, with pricing structured for small businesses and large companies alike.",
+    "yearsExperience": "Years of Experience",
+    "happyClients": "Happy Clients",
+    "mockupAlt": "Website model — fast delivery",
+    "roleProduct": "Product Designer",
+    "roleBranding": "Branding Designer",
+    "roleFullStack": "Full Stack Developer",
+    "services4": "4 services",
+    "services20": "+20 services",
+    "megaTitle": "Mega Promotion",
+    "megaBody": "When you close a deal with us, you get storage and hosting on our domain at no extra cost.",
+    "phone": "(19) 98390-4078"
+  },
+  "whatsapp": {
+    "prefillNavbar": "Hi! I'd like to know more about your web development services.",
+    "prefillPromo": "Hi! I saw the mega promotion on the site and would like to know more about your web development services.",
+    "prefillHelp": "Hi, I came from your site and would like to talk about my project!"
+  },
+  "mobile": {
+    "social": "Contact"
+  },
+  "services": {
+    "title": "Services",
+    "breadcrumbNavLabel": "Breadcrumb",
+    "intro": "Services and solutions that drive more engagement for your business.",
+    "highlightsTitle": "Tailored Solutions For",
+    "highlightsSubtitle": "Every Type of Business",
+    "highlightCards": [
+      {
+        "title": "Landing page",
+        "subtitle": "Conversion-focused pages for campaigns, ads, and launches."
+      },
+      {
+        "title": "Institutional website",
+        "subtitle": "Full brand presence online with multiple sections and content."
+      },
+      {
+        "title": "E-commerce",
+        "subtitle": "Online store with catalog, cart, checkout, and a shopping experience built to convert."
+      }
+    ],
+    "maintenanceBannerTitle": "Maintenance for your website",
+    "maintenanceBannerBody": "Updates, monitoring, and support for your website and systems,\nsecure and aligned with your goals.",
+    "meiFaq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Common questions—if you don’t see yours, reach out on WhatsApp!",
+      "items": [
+        {
+          "q": "What is a landing page?",
+          "a": "It’s a page built around one clear goal: a lead, a sale, or a signup. It works well for ads, Instagram, and short campaigns, without needing a full multi-page site on day one."
+        },
+        {
+          "q": "What does the green banner promotion mean?",
+          "a": "It describes hosting and use of our domain at no extra charge for one year under the commercial terms we agree. Details (scope, your own domain vs. the domain included in the offer, renewal) are always confirmed in the quote and contract."
+        },
+        {
+          "q": "Can I use my own domain (e.g. .com or .com.br)?",
+          "a": "Yes—most projects can point the site to a domain you already own or that we register for you. The banner describes the package with our domain; if you prefer your own, we align pricing and steps in the proposal."
+        },
+        {
+          "q": "Do I need a business registration or company number to hire you?",
+          "a": "You can request a quote and scope the project without extra bureaucracy. For invoicing and a formal contract we agree whether it’s as a registered business, sole trader, or individual—whatever fits your situation."
+        },
+        {
+          "q": "How long until the page is live?",
+          "a": "It depends on scope: a lean landing vs. integrations (forms, payments, CRM), copy, and review rounds. We give a realistic timeline in the proposal; tell us if you have a campaign or launch date so we can prioritize."
+        },
+        {
+          "q": "Will the landing page show up on Google?",
+          "a": "We deliver a solid technical base for indexing and basic on-page SEO. Organic rankings take time and depend on competition. For faster results, landing pages plus paid traffic (Google, Meta, etc.)."
+        },
+        {
+          "q": "What happens after the first year for hosting and domain?",
+          "a": "Hosting and the domain become renewable under the plan and pricing we agree at that time. We’ll give you advance notice to avoid downtime; if you want to move to another provider later, we can help with migration."
+        }
+      ]
+    },
+    "inquiryForm": {
+      "title": "Request a contact",
+      "description": "Fill in the details below. After you send, we’ll get back to you within 24 hours!",
+      "nameLabel": "Name",
+      "namePlaceholder": "How should we address you?",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you{'@'}email.com",
+      "subjectLabel": "Topic / service type",
+      "subjectPlaceholder": "Select a topic",
+      "messageLabel": "Tell us what you need",
+      "messagePlaceholder": "Goals, timeline, current site link, or any details that help us understand what you need.",
+      "submit": "Send",
+      "sending": "Sending…",
+      "successTitle": "Message sent!",
+      "successBody": "We received your message at our inbox and will get back to you soon.",
+      "successButton": "Close",
+      "submitError": "We couldn’t send right now. Please try again in a moment or reach us on WhatsApp.",
+      "whatsappIntro": "Hi! I’m coming from the Services / Maintenance page and I’d like to talk about:",
+      "subjects": [
+        {
+          "value": "landing",
+          "label": "Landing page"
+        },
+        {
+          "value": "institutional",
+          "label": "Institutional website"
+        },
+        {
+          "value": "ecommerce",
+          "label": "E-commerce"
+        },
+        {
+          "value": "maintenance",
+          "label": "Maintenance or support"
+        },
+        {
+          "value": "blog",
+          "label": "Blog / content portal"
+        },
+        {
+          "value": "saas",
+          "label": "SaaS / dashboard / system"
+        },
+        {
+          "value": "custom",
+          "label": "Custom service"
+        },
+        {
+          "value": "other",
+          "label": "Other topic"
+        }
+      ]
+    },
+    "selectedTitle": "Contact",
+    "selectedIntro": "Fill out the form for the service type you chose on the previous page.",
+    "selectedIntroHighlight": "We develop web applications and mobile apps for a wide range of business needs.",
+    "selectedBreadcrumb": "Contact",
+    "selectedContactPrompt": "Choose how to contact us",
+    "selectedContactFormOption": "Full form",
+    "selectedContactFormHint": "Name, email, topic, and your detailed message.",
+    "selectedWhatsappMessageLabel": "Your message",
+    "selectedWhatsappMessagePlaceholder": "Tell us what you need. We’ll open WhatsApp with this text.",
+    "selectedWhatsappSend": "Send",
+    "selectedWhatsappDefaultMessage": "Hi! I'm interested in one of your services!",
+    "selectedWhatsappBadgeTitle": "WhatsApp",
+    "selectedWhatsappBadgeLine": "We reply within 30 minutes",
+    "highlightsTag": "My Projects"
+  }
+}

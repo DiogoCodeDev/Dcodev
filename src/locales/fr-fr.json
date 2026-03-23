@@ -1,0 +1,224 @@
+{
+  "site": {
+    "title": "DCODEV — Excellent rapport qualité-prix pour le site de votre entreprise."
+  },
+  "nav": {
+    "home": "Accueil",
+    "budget": "Devis",
+    "templates": "Modèles",
+    "services": "Services",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "navMenu": {
+    "offBadge50": "-50% OFF",
+    "offBadge30": "-30% OFF",
+    "servicesTitle": "Services",
+    "siteType1": "Landing page",
+    "siteType2": "Site institutionnel",
+    "siteType3": "Maintenance",
+    "siteType4": "Blog / portail de contenu",
+    "siteType5": "SaaS / tableau de bord",
+    "siteType6": "Recrutez-nous pour votre projet",
+    "navigationTitle": "Navigation",
+    "helpTitle": "Aide",
+    "helpItem1": "FAQ (Questions)",
+    "helpItem2": "Espace client",
+    "helpItem3": "Contact / WhatsApp",
+    "socialTitle": "Réseaux sociaux",
+    "socialInstagram": "Instagram",
+    "socialLinkedin": "LinkedIn"
+  },
+  "lang": {
+    "open": "Choisir la langue",
+    "ptBR": "Portugais (Brésil)",
+    "enUS": "Anglais (États-Unis)",
+    "es": "Espagnol",
+    "zhCN": "Chinois",
+    "frFR": "Français"
+  },
+  "promo": {
+    "text": "Hébergement et utilisation de notre domaine gratuits pendant 1 an — offre valable jusqu'au {date}.",
+    "textMobile": "Hébergement et utilisation de notre domaine gratuits pendant 1 an"
+  },
+  "hero": {
+    "title": "WE'RE DCODEV",
+    "subtitleLine1": "Le pont définitif entre votre solution",
+    "subtitleLine2": "et votre client idéal !",
+    "bullet1": "Des systèmes intelligents optimisés par l'IA pour des performances maximales.",
+    "bullet2": "Le meilleur rapport qualité-prix pour des applications immersives et fonctionnelles.",
+    "cta": "JE VEUX PLUS D'ENGAGEMENT"
+  },
+  "serviceShowcase": {
+    "tag": "Mes services",
+    "headingLine1": "Transformer le visuel avec",
+    "headingLine2": "Des solutions UX/UI de pointe",
+    "details": "Voir les détails",
+    "collapse": "Réduire",
+    "branding": {
+      "title": "Branding",
+      "tag1": "Logo",
+      "tag2": "Charte graphique",
+      "body": "Nous créons des identités visuelles uniques et mémorables qui reflètent l'essence de votre marque. Logos percutants et guides pour une cohérence à chaque point de contact."
+    },
+    "ux": {
+      "title": "UX Design",
+      "tag1": "UX",
+      "tag2": "Stratégie",
+      "body": "Comprenez mieux les objectifs et besoins des clients grâce aux entretiens, ou validez concepts et solutions par des tests d'utilisabilité. Méthodes éprouvées adaptées à ce que nous devons apprendre."
+    },
+    "web": {
+      "title": "Développement Web",
+      "tag1": "Frontend",
+      "tag2": "Backend",
+      "body": "Nous développons sites et applications web modernes, responsives et performants. Les meilleures technologies pour des solutions évolutives qui font grandir votre activité."
+    }
+  },
+  "contact": {
+    "quote": "Sites intelligents construits avec l'IA dans la techno de votre choix",
+    "lead": "Un service avec accès facile et contact réactif, avec des tarifs adaptés aux petites structures comme aux grandes entreprises.",
+    "yearsExperience": "Années d'expérience",
+    "happyClients": "Clients satisfaits",
+    "mockupAlt": "Maquette de site — livraison rapide",
+    "roleProduct": "Product Designer",
+    "roleBranding": "Branding Designer",
+    "roleFullStack": "Développeur Full Stack",
+    "services4": "4 prestations",
+    "services20": "+20 prestations",
+    "megaTitle": "Méga promotion",
+    "megaBody": "En signant avec nous, vous bénéficiez du stockage et de l'hébergement sur notre domaine sans frais supplémentaires.",
+    "phone": "(19) 98390-4078"
+  },
+  "whatsapp": {
+    "prefillNavbar": "Bonjour ! J'aimerais en savoir plus sur vos services de développement web.",
+    "prefillPromo": "Bonjour ! J'ai vu la méga promotion sur le site et j'aimerais en savoir plus sur vos services web.",
+    "prefillHelp": "Bonjour, je viens de votre site et j’aimerais parler de mon projet !"
+  },
+  "mobile": {
+    "social": "Contact"
+  },
+  "services": {
+    "title": "Services",
+    "breadcrumbNavLabel": "Fil d’Ariane",
+    "intro": "Services et solutions pour plus d’engagement avec votre audience.",
+    "highlightsTag": "Mes Projets",
+    "highlightsTitle": "Solutions Sur Mesure Pour",
+    "highlightsSubtitle": "Chaque Type d'Entreprise",
+    "highlightCards": [
+      {
+        "title": "Landing page",
+        "subtitle": "Pages orientées conversion pour campagnes, pubs et lancements."
+      },
+      {
+        "title": "Site institutionnel",
+        "subtitle": "Présence complète de votre marque avec plusieurs sections et contenus."
+      },
+      {
+        "title": "E-commerce",
+        "subtitle": "Boutique en ligne avec catalogue, panier, paiements et parcours d’achat orienté conversion."
+      }
+    ],
+    "maintenanceBannerTitle": "Maintenance de votre site",
+    "maintenanceBannerBody": "Mises à jour, surveillance et support pour votre site et vos systèmes,\nsécurité et objectifs au centre.",
+    "meiFaq": {
+      "title": "Questions fréquentes",
+      "subtitle": "Questions fréquentes — si la vôtre n’apparaît pas, contactez-nous sur WhatsApp !",
+      "items": [
+        {
+          "q": "Qu’est-ce qu’une landing page ?",
+          "a": "C’est une page centrée sur un objectif précis : contact, vente ou inscription. Elle convient bien aux publicités, à Instagram et aux campagnes courtes, sans un site multipage complet dès le départ."
+        },
+        {
+          "q": "Que signifie la promotion de la bande verte en haut du site ?",
+          "a": "Elle indique l’hébergement et l’usage de notre nom de domaine sans surcoût pendant 1 an selon les conditions commerciales convenues. Les détails (périmètre, votre propre domaine vs. celui de l’offre, renouvellement) sont confirmés dans le devis et le contrat."
+        },
+        {
+          "q": "Puis-je utiliser mon propre nom de domaine ?",
+          "a": "Oui : dans la plupart des projets le site peut pointer vers un domaine que vous possédez déjà ou que nous enregistrons. La bande verte décrit le forfait avec notre domaine ; si vous préférez le vôtre, on l’ajuste dans la proposition."
+        },
+        {
+          "q": "Faut-il un statut d’entreprise pour vous contacter ?",
+          "a": "Vous pouvez demander un devis et cadrer le projet simplement. Pour la facturation et un contrat formel, on convient du statut (auto-entrepreneur, société, particulier) selon votre situation."
+        },
+        {
+          "q": "Combien de temps avant mise en ligne ?",
+          "a": "Cela dépend du périmètre : landing légère vs. intégrations (formulaires, paiement, CRM), contenu et allers-retours. Nous indiquons un délai réaliste dans la proposition ; signalez une date de campagne ou de lancement pour prioriser."
+        },
+        {
+          "q": "La landing sera visible sur Google ?",
+          "a": "Nous livrons une base technique adaptée à l’indexation et de bonnes pratiques SEO on-page. Le référencement naturel prend du temps et dépend de la concurrence. Pour des résultats plus rapides, landing + trafic payant (Google, Meta, etc.)."
+        },
+        {
+          "q": "Après la première année, que deviennent l’hébergement et le domaine ?",
+          "a": "Ils deviennent renouvelables selon le plan et les tarifs convenus. Nous prévenons à l’avance pour éviter les coupures ; si vous souhaitez migrer chez un autre hébergeur, nous pouvons vous guider."
+        }
+      ]
+    },
+    "inquiryForm": {
+      "title": "Demander un contact",
+      "description": "Remplissez les champs ci-dessous. Après l’envoi, nous vous répondrons sous 24 heures !",
+      "nameLabel": "Nom",
+      "namePlaceholder": "Comment vous appeler ?",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "vous{'@'}email.com",
+      "subjectLabel": "Motif / type de service",
+      "subjectPlaceholder": "Choisissez un sujet",
+      "messageLabel": "Décrivez votre besoin",
+      "messagePlaceholder": "Objectifs, délais, lien du site actuel ou toute information utile.",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours…",
+      "successTitle": "Message envoyé !",
+      "successBody": "Nous avons bien reçu votre message et vous répondrons bientôt.",
+      "successButton": "Fermer",
+      "submitError": "Envoi impossible pour le moment. Réessayez dans un instant ou contactez-nous sur WhatsApp.",
+      "whatsappIntro": "Bonjour ! Je viens de la page Services / Maintenance et je souhaite parler de :",
+      "subjects": [
+        {
+          "value": "landing",
+          "label": "Landing page"
+        },
+        {
+          "value": "institutional",
+          "label": "Site institutionnel"
+        },
+        {
+          "value": "ecommerce",
+          "label": "E-commerce"
+        },
+        {
+          "value": "maintenance",
+          "label": "Maintenance ou support"
+        },
+        {
+          "value": "blog",
+          "label": "Blog / portail de contenu"
+        },
+        {
+          "value": "saas",
+          "label": "SaaS / tableau de bord / système"
+        },
+        {
+          "value": "custom",
+          "label": "Service sur mesure"
+        },
+        {
+          "value": "other",
+          "label": "Autre sujet"
+        }
+      ]
+    },
+    "selectedTitle": "Contact",
+    "selectedIntro": "Remplissez le formulaire selon le type de service choisi à l’étape précédente.",
+    "selectedIntroHighlight": "Nous développons des applications web et mobiles pour répondre à des besoins professionnels variés.",
+    "selectedBreadcrumb": "Contact",
+    "selectedContactPrompt": "Choisissez un mode de contact",
+    "selectedContactFormOption": "Formulaire complet",
+    "selectedContactFormHint": "Nom, e-mail, sujet et message détaillé.",
+    "selectedWhatsappMessageLabel": "Votre message",
+    "selectedWhatsappMessagePlaceholder": "Décrivez votre besoin. WhatsApp s’ouvrira avec ce texte.",
+    "selectedWhatsappSend": "Envoyer",
+    "selectedWhatsappDefaultMessage": "Bonjour ! Je suis intéressé par l’un de vos services !",
+    "selectedWhatsappBadgeTitle": "WhatsApp",
+    "selectedWhatsappBadgeLine": "Réponse sous 30 minutes"
+  }
+}

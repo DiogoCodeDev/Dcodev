@@ -1,0 +1,9 @@
+# Regras de Estilo e Framework
+- Sempre utilize Tailwind CSS para estilização.
+- NUNCA escreva CSS puro (arquivos .css ou blocos <style>) a menos que seja estritamente necessário para animações complexas.
+- Ao sugerir classes do Tailwind, use as versões abreviadas e modernas.
+- Se eu pedir "Tailwind 4", aplique as convenções da v4 (como o uso de variáveis CSS nativas ou o novo motor).
+
+# Preferências de Código
+- Framework: Vue.js 3 (Composition API).
+- Idioma de comentários: Português.
